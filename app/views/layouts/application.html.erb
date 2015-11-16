@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<% if user_signed_in? %>
+			<%= render "layouts/nav/inner" %>
+		<% else %>
+			<%= render "layouts/nav/outer" %>
+		<% end %>
+		<div id="mainContent">
+			<%= yield %>
+		</div>
+	</body>
+</html>
