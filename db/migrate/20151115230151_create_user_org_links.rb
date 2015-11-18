@@ -7,5 +7,8 @@ class CreateUserOrgLinks < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :user_org_links, :user_id
+    add_index :user_org_links, :org_id
   end
 end
